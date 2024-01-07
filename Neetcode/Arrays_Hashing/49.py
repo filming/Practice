@@ -10,6 +10,10 @@ from typing import *
 Solution #1
 Time Complexity: O(n * klogk)
 Space Complexity: O(n)
+
+Solution #2
+Time Complexity: O(N * KlogK)
+Space Complexity: O(N * K)
 '''
 
 from typing import *
@@ -40,6 +44,20 @@ class Solution:
                 anagram_groups[curr_word_char_occurrences_tuple] = [curr_word]
         
         return anagram_groups.values()
+
+    # Solution 2
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        result = {}
+        
+        for curr_word in strs:
+            curr_word_sorted_tuple = tuple(sorted(curr_word))
+
+            if curr_word_sorted_tuple in result:
+                result[curr_word_sorted_tuple].append(curr_word)
+            else:
+                result[curr_word_sorted_tuple] = [curr_word]
+
+        return result.values()
 
 def main():
     solution = Solution()
