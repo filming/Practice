@@ -2,14 +2,17 @@ from typing import *
 
 # LINK
 
-'''notes
+''' Notes
+
 '''
 
-'''approach
+''' Complexities 
+
 Solution #1
 Time Complexity: 
 Space Complexity:
 '''
+
 
 class Solution:
     # Solution 1
