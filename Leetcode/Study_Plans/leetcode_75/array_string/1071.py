@@ -3,13 +3,14 @@ from typing import *
 # https://leetcode.com/problems/greatest-common-divisor-of-strings/?envType=study-plan-v2&envId=leetcode-75
 
 ''' Notes
-
+- Multiplying the substring and comparing it with the bigger string takes O(m) in the worst case, as the multiplication operation for 
+a string is linear to the size of the resulting string, and comparing two strings of length m takes O(m).
 '''
 
 ''' Complexities 
 
 Solution #1
-Time Complexity: O(n)
+Time Complexity: O(n * m)
 Space Complexity: O(n)
 '''
 
