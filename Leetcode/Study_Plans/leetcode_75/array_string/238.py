@@ -11,6 +11,10 @@ from typing import *
 Solution #1
 Time Complexity: O(n)
 Space Complexity: O(n)
+
+Solution #2
+Time Complexity: O(n)
+Space Complexity: O(1), since result/answer list doesn't count towards memory calculations
 '''
 
 
@@ -82,11 +86,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    [1, 2, 6, 24]
-
-    cp = 24
-
-    [1,24, 12, 8,6]
-
-
