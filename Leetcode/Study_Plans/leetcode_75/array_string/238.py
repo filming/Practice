@@ -49,6 +49,27 @@ class Solution:
                 result[i] = prefix_products[i-1] * suffix_products[i+1]
         
         return result
+    
+    # Solution 2
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        result = [0] * len(nums)
+
+        # setting up our result list to be a running-product list going from the left to right elements of nums
+        result[0] = 1
+        for i in range(1, len(nums)):
+            # result[i - 1] already contains the product of elements to the left of 'i - 1'
+            # Simply multiplying it with nums[i - 1] would give the product of all 
+            # elements to the left of index 'i'
+            result[i] = nums[i - 1] * result[i - 1]
+
+        # use a variable to store the running-product of the elements from the right to left of nums
+        curr_right_product = 1
+        for i in range (len(result)-1 , -1, -1):
+            result[i] *= curr_right_product
+
+            curr_right_product *= nums[i]
+            
+        return result
 
 def main():
     solution = Solution()
@@ -61,3 +82,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    [1, 2, 6, 24]
+
+    cp = 24
+
+    [1,24, 12, 8,6]
+
+
